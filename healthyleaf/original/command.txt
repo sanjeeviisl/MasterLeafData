@@ -1,0 +1,19 @@
+
+Script file for removing backgroud images
+
+a=1
+for i in *.*; do
+  new=$(printf "Viburnum_awabuki_K_Koch_seg_%04d.jpg" "$a") 
+  python ../segment.py "$i" "$new"
+  let a=a+1
+done
+
+Script file for making black  backgroud images
+
+a=1
+for i in *.*; do
+  new=$(printf "Viburnum_awabuki_K_Koch_black_%04d.jpg" "$a")
+  python ../black_segment.py "$i" "$new"
+  let a=a+1
+done
+
